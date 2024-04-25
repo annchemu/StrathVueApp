@@ -1,14 +1,7 @@
 <template>
     <div id = 'homepage'>
         <v-container>
-                <v-layout column>
-                    <v-carousel>
-                        <v-carousel-item
-                            src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg"
-                            cover
-                        ></v-carousel-item>
-                    </v-carousel>
-                    </v-layout>
+                
                     <v-layout>
                     <v-container>
                         <v-row align="center" justify="center">
@@ -50,7 +43,9 @@
     </div>
 </template>
 <script>
+import axios from 'axios';
 export default {
+
   data() {
     return {
       courses:[
@@ -60,12 +55,9 @@ export default {
         },
         {
             id: 2,
-            course_name: 'Computer Science'
-        },
-        {
-            id: 3,
             coursename: 'Computer Science'
         },
+       
         {
             id: 4,
             coursename: 'Financial Engineering'
@@ -95,18 +87,35 @@ export default {
             coursename: ' Hospitality and Tourism'
         }
       ],
+      courses_list:{},
       componentTitle: 'Courses at Strath Uni'
     }
   },
   methods: {
     addCoursesLocation() {
-      for(course in courses){			//courses is an array containing all the courses in the app
-	course.location = 'Nairobi'		// adding a new element to the array
-    }
-  }
+        for(course in courses){			//courses is an array containing all the courses in the app
+            course.location = 'Nairobi'		// adding a new element to the array
+        }
+    },
+
+    // async getCourses(){
+    //     const apiUrl = 'http://127.0.0.1:8000/api/courses'; // Replace with your API endpoint URL
+
+    //     axios.get(apiUrl)
+    //         .then((response) => {
+    //             this.courses_list = response.data;
+    //             console.log(this.courses_list)
+
+    //         })
+    //         .catch((error) => {
+    //             console.error('Error fetching data:', error);
+    //         });
+
+    // }
   },
   mounted() {
     console.log(this.courses)
+    // this.getCourses()
   }
 }
 </script>
