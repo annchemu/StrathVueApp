@@ -1,5 +1,7 @@
 # StrathVueApp
 
+Link to live site: https://strathvueapp-1.onrender.com/alumni
+
 Add description on the projects
 This application allows students in a university to view the different courses, events and partnerships offered. The app allows students to register for a course and view their schedules
 
